@@ -16,4 +16,6 @@ app.add_middleware(
 @app.get("/")
 async def read_root():
     return {"Hello": "World"}
-
+@app.get("/api/greet/{name}")
+async def greet(name: str):
+    return {"message": f"Hello, {name}!"}
